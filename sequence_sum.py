@@ -7,7 +7,7 @@ def arithmetic_sum(first: float, diff: float, n: int) -> float:
 def geometric_sum(first: float, ratio: float, n: int) -> float:
     if n <= 0:
         raise ValueError("项数 n 必须为正整数")
-    if ratio == 1:
+    if abs(ratio - 1) < 1e-12:
         return first * n
     return first * (1 - ratio ** n) / (1 - ratio)
 
